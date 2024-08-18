@@ -13,7 +13,7 @@ model = ChatMistralAI(model="mistral-large-latest")
 
 # prompttemp = PromptTemplate (template = template, input_variables = ['scenario'])
 choice=""
-model = YOLO('yolov8n.pt')
+yolomodel = YOLO('yolov8n.pt')
 # def getimagedetect():
     
 def getresponse(prompt):
@@ -65,7 +65,7 @@ else:
     if file:
         col1,col2=st.columns(2)
         st.image(file)
-        results=model("detect.jpg")
+        results=yolomodel("detect.jpg")
         annotated_frame=results[0].plot()
         org_frame=col1.empty()
         ann_frame=col2.empty()
